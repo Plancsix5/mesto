@@ -1,0 +1,14 @@
+.profile-info__edit-button {
+    background-image: url(../../../images/Icon\ pen.svg);
+    border: 1px solid #FFFFFF;
+    width: 24px;
+    height: 24px;
+    background-color: black;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    align-self: center;
+}
+.profile-info__edit-button:hover {
+    opacity: 0.6;
+}
