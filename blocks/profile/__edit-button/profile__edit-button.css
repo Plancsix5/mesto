@@ -1,4 +1,4 @@
-.profile-info__edit-button {
+.profile__edit-button {
     background-image: url(../../../images/Icon\ pen.svg);
     border: 1px solid #FFFFFF;
     width: 24px;
@@ -9,6 +9,6 @@
     display: flex;
     align-self: center;
 }
-.profile-info__edit-button:hover {
+.profile__edit-button:hover {
     opacity: 0.6;
 }
