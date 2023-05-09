@@ -17,6 +17,6 @@
     border-radius: 2px;
 }
 .popup__name:focus { 
-    outline: none !important;
+    outline: none;
     box-shadow:0 0 5px #4670d0;
  }
