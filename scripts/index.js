@@ -9,6 +9,8 @@ let form = document.querySelector('.popup__content')
 
 openButton.addEventListener('click', function(){
     popup.classList.add('popup_opened')
+    popupName.value = profileName.textContent 
+    popupWorkplace.value = profileWorkplace.textContent 
 });
 closeButton.addEventListener('click', function(){
     popup.classList.remove('popup_opened')
