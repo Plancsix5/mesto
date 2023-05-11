@@ -1,9 +1,7 @@
-.popup__name {
-    margin: 0 auto;
-    width: 100%;
-    margin-top: 54px;
+.popup__input {
     padding: 0;
     padding-bottom: 13px;
+    width: 100%;
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
@@ -13,10 +11,9 @@
     white-space: nowrap;
     color: #000000;
     border: 0;
-    border-bottom: 1px solid  rgba(0, 0, 0, .2);
-    border-radius: 2px;
-}
-.popup__name:focus { 
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  }
+  .popup__input:focus {
     outline: none;
-    box-shadow:0 0 5px #4670d0;
- }
+    box-shadow: 0 0 5px #4670d0;
+  }

@@ -9,6 +9,7 @@
     background-position: center;
     align-self: center;
     margin: 0 0 0 auto;
+    cursor: pointer;
 }
 .profile__add-button:hover {
     opacity: 0.6;
@@ -18,5 +19,6 @@
       width: 282px;
       margin: 0 auto;
       margin-top: 36px;
+      background-size: 16px;
     }
 }   
