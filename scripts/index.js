@@ -3,22 +3,20 @@ let popup = document.querySelector('.popup');
 let closeButton = document.querySelector('.popup__close-button');
 let profileName = document.querySelector('.profile__name');
 let profileWorkplace = document.querySelector('.profile__workplace');
-let popupName = document.querySelector('.popup__input_name');
-let popupWorkplace = document.querySelector('.popup__input_workplace');
-let form = document.querySelector('.popup__content')
+let popupContent = document.forms.popup__content;
 
 openButton.addEventListener('click', function(){
     popup.classList.add('popup_opened')
-    popupName.value = profileName.textContent 
-    popupWorkplace.value = profileWorkplace.textContent 
+    popupContent.elements.name.value = profileName.textContent 
+    popupContent.elements.workplace.value = profileWorkplace.textContent 
 });
 closeButton.addEventListener('click', function(){
     popup.classList.remove('popup_opened')
 });
 
-form.addEventListener('submit', function(event){
+popupContent.addEventListener('submit', function(event){
     event.preventDefault();
-    profileName.textContent = popupName.value
-    profileWorkplace.textContent = popupWorkplace.value
+    profileName.textContent = popupContent.elements.name.value
+    profileWorkplace.textContent = popupContent.elements.workplace.value
     popup.classList.remove('popup_opened')
 })
