@@ -1,0 +1,19 @@
+.element__wastebasket-button {
+    background-image: url(../../../images/wastebasket.svg);
+    align-self: center;
+    cursor: pointer;
+    border-image: initial;
+    background-repeat: no-repeat;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    width: 18px;
+    height: 19px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+.element__wastebasket-button:hover {
+    opacity: 0.6;
+}
