@@ -72,13 +72,13 @@ function openPopupImage(link, text) {
   popupFullSizeImage.alt = text;
   popupImageName.textContent = text;
 }
-const popupElement = document.querySelector(".popup__type_element");
+const popupElement = document.querySelector(".popup_type_element");
 const closeElementButton = popupElement.querySelector(".popup__close-button");
 const openElementButton = document.querySelector(".profile__add-button");
 const elementName = document.querySelector("#element-input");
 const elementLink = document.querySelector("#link-input");
 const clickImage = document.querySelector(".element__type_image");
-const popupImage = document.querySelector(".popup__type_image");
+const popupImage = document.querySelector(".popup_type_image");
 const closeImageButton = popupImage.querySelector(".popup__close-button");
 const popupImageName = document.querySelector(".popup__image-title");
 const popupFullSizeImage = popupImage.querySelector("#popup__image");
