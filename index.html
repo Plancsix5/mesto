@@ -23,27 +23,25 @@
       </div>
       <button class="profile__add-button" type="button"></button>
     </section>
-
-    <section class="elements">
-      <template id="element-template">
-        <div class="element">
-          <button class="element__fullscreen-button">
-            <button type="button" class="element__wastebasket-button"></button>
-            <img src="#" alt="" class="element__img" />
-          </button>
-          <div class="element__text">
-            <h2 class="element__title"></h2>
-            <button class="element__like-button" type="button"></button>
-          </div>
-        </div>
-      </template>
-    </section>
-      </main>
+    <section class="elements"></section>
+  </main>
+  <template id="element-template">
+    <div class="element">
+      <button class="element__fullscreen-button">
+        <button type="button" class="element__wastebasket-button"></button>
+        <img src="#" alt="" class="element__img" />
+      </button>
+      <div class="element__text">
+        <h2 class="element__title"></h2>
+        <button class="element__like-button" type="button"></button>
+      </div>
+    </div>
+  </template>
 
   <footer class="footer">
     <p class="footer__title">&#169; 2023 Mesto Russia</p>
   </footer>
-  <div id="popup" class="popup">
+  <div id="popup" class="popup popup_type_profile">
     <div class="popup__container">
       <button class="popup__close-button" type="button" id="closeProfile"></button>
       <form class="popup__content" id="popup__content" name="popup__content">
@@ -58,25 +56,23 @@
       </form>
     </div>
   </div>
-  <div  class="popup popup_type_element">
+  <div class="popup popup_type_element">
     <div class="popup__container">
       <button class="popup__close-button" type="button" id="closeElement"></button>
-      <form class="popup__content"  name="new_element">
+      <form class="popup__content" name="new_element">
         <h2 class="popup__title">Новое место</h2>
         <input class="popup__profile-form-input popup__profile-form-input_type_name" type="text" name="element_name"
           placeholder="Название" id="element-input" />
         <input class="popup__profile-form-input popup__profile-form-input_type_link" type="text" name="element_link"
           placeholder="Ссылка на картинку" id="link-input" />
-        <button class="popup__save" type="submit" >
-          Создать
-        </button>
+        <button class="popup__save" type="submit">Создать</button>
       </form>
     </div>
   </div>
   <div class="popup popup_type_image">
     <div class="popup__image-content">
       <button class="popup__close-button" type="button" id="closeImage"></button>
-      <img src="#" alt="#" id="popup__image" class="popup__image">
+      <img src="#" alt="#" id="popup__image" class="popup__image" />
       <h3 class="popup__image-title" id="popup__image-title"></h3>
     </div>
   </div>
