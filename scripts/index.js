@@ -35,13 +35,7 @@ formProfile.addEventListener("submit", function (event) {
   profileWorkplace.textContent = popupWorkplace.value;
   closePopup(popupProfile);
 });
-// функция открытие попапа картинки
-// function openPopupImage(link, text) {
-//   openPopup(popupImage);
-//   popupFullSizeImage.src = link;
-//   popupFullSizeImage.alt = text;
-//   popupImageName.textContent = text;
-// }
+
 const popupElement = document.querySelector(".popup_type_element");
 const closeElementButton = popupElement.querySelector(".popup__close-button");
 const openElementButton = document.querySelector(".profile__add-button");
