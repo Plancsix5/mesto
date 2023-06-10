@@ -1,6 +1,7 @@
 // редактирование профиля
 const openProfileButton = document.querySelector(".profile__edit-button");
 const popupProfile = document.querySelector(".popup_type_profile");
+const popups = document.querySelectorAll(".popup");
 const closeButton = document.querySelectorAll(".popup__close-button");
 const profileName = document.querySelector(".profile__name");
 const profileWorkplace = document.querySelector(".profile__workplace");
@@ -10,17 +11,21 @@ const popupName = document.querySelector(
 const popupWorkplace = document.querySelector(
   ".popup__profile-form-input_type_workplace"
 );
-const formProfile = document.querySelector(".popup__content");
+const formProfile = document.querySelector(".popup__form");
 
 function openPopup(element) {
   element.classList.add("popup_opened");
+  document.addEventListener("keydown", closePopupEsc);
 }
 function closePopup(element) {
   element.closest(".popup").classList.remove("popup_opened");
+  document.removeEventListener("keydown", closePopupEsc);
 }
 
 closeButton.forEach((item) => {
-  item.addEventListener("click",()=>{closePopup(item)})
+  item.addEventListener("click", () => {
+    closePopup(item);
+  });
 });
 
 openProfileButton.addEventListener("click", function () {
@@ -28,7 +33,6 @@ openProfileButton.addEventListener("click", function () {
   popupName.value = profileName.textContent;
   popupWorkplace.value = profileWorkplace.textContent;
 });
-
 
 formProfile.addEventListener("submit", function (event) {
   event.preventDefault();
@@ -40,7 +44,7 @@ formProfile.addEventListener("submit", function (event) {
 const popupElement = document.querySelector(".popup_type_element");
 const closeElementButton = popupElement.querySelector(".popup__close-button");
 const openElementButton = document.querySelector(".profile__add-button");
-const elementName = document.querySelector("#element-input");
+const elementName = document.querySelector("#element-name");
 const elementLink = document.querySelector("#link-input");
 const clickImage = document.querySelector(".element__type_image");
 const popupImage = document.querySelector(".popup_type_image");
@@ -50,7 +54,6 @@ const popupImageName = popupImage.querySelector(".popup__image-title");
 openElementButton.addEventListener("click", function () {
   openPopup(popupElement);
 });
-
 
 const cardElement = document.querySelector("#element-template").content;
 const element = cardElement.querySelector(".element");
@@ -121,8 +124,6 @@ function createCard(el) {
 
   const closeImageButton = popupImage.querySelector(".popup__close-button");
 
-
-
   return cardItem;
 }
 
@@ -138,3 +139,26 @@ popupElement.addEventListener("submit", function (event) {
   event.target.reset();
   elements.prepend(newElement);
 });
+
+//закрытие попапа через клик по оверлею
+popups.forEach((popup) => {
+  popup.addEventListener("mousedown", function (evt) {
+    if (
+      evt.target.classList.contains("popup_opened") ||
+      evt.target.classList.contains("popup__close-button")
+    ) {
+      closePopup(popup);
+    }
+  });
+});
+
+//функция закрытия попапа через эскейп
+function closePopupEsc(evt) {
+  if (evt.key === "Escape") {
+    popups.forEach((popup) => {
+      if (popup.classList.contains("popup_opened")) {
+        closePopup(popup);
+      }
+    });
+  }
+}

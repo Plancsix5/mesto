@@ -1,0 +1,9 @@
+.popup__save_disabled {
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    color: rgba(0, 0, 0, 0.15);
+    background-color: transparent;
+    cursor:default;
+}
+.popup__save_disabled:hover { 
+    opacity: 0.8;
+}
