@@ -3,7 +3,7 @@ const validate = {
   inputSelector: ".popup__profile-form-input",
   submitButtonSelector: ".popup__save",
   inactiveButtonClass: "popup__save_disabled",
-  inputErrorClass: "popup__input_invalid",
+  inputErrorClass: "popup__profile-form-input_type_invalid",
   errorClass: "popup__error_visible",
 };
 //Функция кнопки сохранения
