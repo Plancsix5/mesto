@@ -42,6 +42,7 @@ formProfile.addEventListener("submit", function (event) {
 });
 
 const popupElement = document.querySelector(".popup_type_element");
+const button = popupElement.querySelector(".popup_save")
 const closeElementButton = popupElement.querySelector(".popup__close-button");
 const openElementButton = document.querySelector(".profile__add-button");
 const elementName = document.querySelector("#element-name");
@@ -50,9 +51,11 @@ const clickImage = document.querySelector(".element__type_image");
 const popupImage = document.querySelector(".popup_type_image");
 const popupFullSizeImage = popupImage.querySelector(".popup__image");
 const popupImageName = popupImage.querySelector(".popup__image-title");
+const popupAddElement = document.querySelector(".popup__add-element")
 
 openElementButton.addEventListener("click", function () {
   openPopup(popupElement);
+  toggleButtonState(popupAddElement,validate);
 });
 
 const cardElement = document.querySelector("#element-template").content;
@@ -129,7 +132,6 @@ function createCard(el) {
 
 popupElement.addEventListener("submit", function (event) {
   event.preventDefault();
-
   const newElement = createCard({
     name: elementName.value,
     link: elementLink.value,

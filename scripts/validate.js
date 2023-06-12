@@ -6,18 +6,21 @@ const validate = {
   inputErrorClass: "popup__profile-form-input_type_invalid",
   errorClass: "popup__error_visible",
 };
+const buttons = document.querySelectorAll(".popup__save");
 //Функция кнопки сохранения
 const toggleButtonState = (form, validationConfig) => {
-  const button = form.querySelector(validationConfig.submitButtonSelector);
-  if (!form.checkValidity()) {
-    button.setAttribute("disabled", true);
-    button.classList.add(validationConfig.inactiveButtonClass);
-    button.classList.remove(validationConfig.submitButtonSelector);
-  } else {
-    button.removeAttribute("disabled");
-    button.classList.add(validationConfig.submitButtonSelector);
-    button.classList.remove(validationConfig.inactiveButtonClass);
-  }
+  buttons.forEach((button) => {
+    console.log(button);
+    if (!form.checkValidity()) {
+      button.setAttribute("disabled", true);
+      button.classList.add(validationConfig.inactiveButtonClass);
+      button.classList.remove(validationConfig.submitButtonSelector);
+    } else {
+      button.removeAttribute("disabled");
+      button.classList.add(validationConfig.submitButtonSelector);
+      button.classList.remove(validationConfig.inactiveButtonClass);
+    }
+  })
 };
 
 const getErrorElement = (input) => {
@@ -60,5 +63,6 @@ function enableValidation(validationConfig) {
       );
     });
 }
+
 
 enableValidation(validate);
