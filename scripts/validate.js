@@ -10,7 +10,6 @@ const buttons = document.querySelectorAll(".popup__save");
 //Функция кнопки сохранения
 const toggleButtonState = (form, validationConfig) => {
   buttons.forEach((button) => {
-    console.log(button);
     if (!form.checkValidity()) {
       button.setAttribute("disabled", true);
       button.classList.add(validationConfig.inactiveButtonClass);
