@@ -52,10 +52,11 @@ const popupImage = document.querySelector(".popup_type_image");
 const popupFullSizeImage = popupImage.querySelector(".popup__image");
 const popupImageName = popupImage.querySelector(".popup__image-title");
 const popupAddElement = document.querySelector(".popup__add-element")
+const popupSaveButton = popupAddElement.querySelector(".popup__save")
 
 openElementButton.addEventListener("click", function () {
   openPopup(popupElement);
-  toggleButtonState(popupAddElement,validate);
+  toggleButtonState(popupAddElement,popupSaveButton,validate);
 });
 
 const cardElement = document.querySelector("#element-template").content;
