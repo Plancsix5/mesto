@@ -28,41 +28,21 @@ const setEventListeners = (formElement,validate) => {
     })
   })
 };
-// const getErrorElement = (input) => {
-//   return document.querySelector(`#${input.name}-error`);
-// };
+
 function getErrorElement(input) {
   return document.querySelector(`#${input.id}-error`);
 }
-// const hideInputError = (input, inputElement,validate) => {
-//   const errorElement = getErrorElement(input);
-//   errorElement.textContent = "";
-//   inputElement.classList.remove(validate.inputErrorClass);
-//   errorElement.classList.remove(validate.errorClass);
-// };
 
 function hideInputError(input) {
   const errorElement = getErrorElement(input);
   errorElement.textContent = '';
 }
 
-// const showInputError = (input, inputElement,validate) => {
-//   const errorElement = getErrorElement(input);
-//   errorElement.textContent = input.validationMessage;
-//   inputElement.classList.add(validate.inputErrorClass);
-//   errorElement.classList.add(settings.errorClass);
-// };
 function showInputError(input) {
   const errorElement = getErrorElement(input);
   errorElement.textContent = input.validationMessage;
 }
-// const validateInput = (input, inputElement,validate) => {
-//   if (!inputElement.validity.valid) {
-//     showInputError(input, inputElement,validate);
-//   } else {
-//     hideInputError(input, inputElement,validate);
-//   }
-// };
+
 function validateInput(input) {
   if (!input.validity.valid) {
     showInputError(input);
@@ -75,15 +55,9 @@ function enableValidation(validate) {
   document
     .querySelectorAll(validate.formSelector)
     .forEach((popupForm) => {
-      // popupForm.addEventListener(
-      //   "input",
-      //   (evt) => {
-      //     const input = evt.target;
-      //     validateInput(input, validate.inputErrorClass);
-          setEventListeners(popupForm, validate);
-    //     },
-    //     true
-    //   );
+
+      setEventListeners(popupForm, validate);
+
     });
 }
 
