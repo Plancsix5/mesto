@@ -9,7 +9,6 @@ const validate = {
 //Функция кнопки сохранения
 const toggleButtonState = (form,saveButton,validate) => {
   if (!form.checkValidity()) {
-    console.log(saveButton);
     saveButton.setAttribute("disabled", true);
     saveButton.classList.add(validate.inactiveButtonClass);
     saveButton.classList.remove(validate.submitButtonSelector);
@@ -24,38 +23,53 @@ const setEventListeners = (formElement,validate) => {
   const saveButton = formElement.querySelector(validate.submitButtonSelector);
   inputList.forEach((inputItem) => {
     inputItem.addEventListener('input', () => {
-      validateInput(formElement,inputItem,validate);
+      validateInput(inputItem);
       toggleButtonState(formElement,saveButton, validate);
     })
   })
-  toggleButtonState(formElement,saveButton, validate);
 };
+// const getErrorElement = (input) => {
+//   return document.querySelector(`#${input.name}-error`);
+// };
+function getErrorElement(input) {
+  return document.querySelector(`#${input.id}-error`);
+}
+// const hideInputError = (input, inputElement,validate) => {
+//   const errorElement = getErrorElement(input);
+//   errorElement.textContent = "";
+//   inputElement.classList.remove(validate.inputErrorClass);
+//   errorElement.classList.remove(validate.errorClass);
+// };
 
-const getErrorElement = (input) => {
-  return document.querySelector(`#${input.name}-error`);
-};
-
-const hideInputError = (input, inputElement,validate) => {
+function hideInputError(input) {
   const errorElement = getErrorElement(input);
-  errorElement.textContent = "";
-  inputElement.classList.remove(validate.inputErrorClass);
-  errorElement.classList.remove(validate.errorClass);
-};
+  errorElement.textContent = '';
+}
 
-const showInputError = (input, inputElement,validate) => {
+// const showInputError = (input, inputElement,validate) => {
+//   const errorElement = getErrorElement(input);
+//   errorElement.textContent = input.validationMessage;
+//   inputElement.classList.add(validate.inputErrorClass);
+//   errorElement.classList.add(settings.errorClass);
+// };
+function showInputError(input) {
   const errorElement = getErrorElement(input);
   errorElement.textContent = input.validationMessage;
-  inputElement.classList.add(validate.inputErrorClass);
-  errorElement.classList.add(settings.errorClass);
-};
-
-const validateInput = (input, inputElement,validate) => {
-  if (!inputElement.validity.valid) {
-    showInputError(input, inputElement,validate);
+}
+// const validateInput = (input, inputElement,validate) => {
+//   if (!inputElement.validity.valid) {
+//     showInputError(input, inputElement,validate);
+//   } else {
+//     hideInputError(input, inputElement,validate);
+//   }
+// };
+function validateInput(input) {
+  if (!input.validity.valid) {
+    showInputError(input);
   } else {
-    hideInputError(input, inputElement,validate);
+    hideInputError(input);
   }
-};
+}
 //функция валидации всех форм
 function enableValidation(validate) {
   document
