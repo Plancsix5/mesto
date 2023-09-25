@@ -1,6 +1,10 @@
+import validate from "./FormValidator.js"
+import FormValidator from "./FormValidator.js";
+
 // редактирование профиля
 const openProfileButton = document.querySelector(".profile__edit-button");
 const popupProfile = document.querySelector(".popup_type_profile");
+const profileForm = popupProfile.querySelector(".popup__form");
 const popups = document.querySelectorAll(".popup");
 const closeButton = document.querySelectorAll(".popup__close-button");
 const profileName = document.querySelector(".profile__name");
@@ -56,7 +60,6 @@ const popupSaveButton = popupAddElement.querySelector(".popup__save")
 
 openElementButton.addEventListener("click", function () {
   openPopup(popupElement);
-  toggleButtonState(popupAddElement,popupSaveButton,validate);
 });
 
 const cardElement = document.querySelector("#element-template").content;
@@ -165,3 +168,8 @@ function closePopupEsc(evt) {
     });
   }
 }
+
+const formEditValidator = new FormValidator(profileForm,validate);
+formEditValidator.enableValidation();
+const formAddValidator = new FormValidator(popupElement,validate);
+formAddValidator.enableValidation();
