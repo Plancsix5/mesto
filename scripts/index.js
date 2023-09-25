@@ -168,6 +168,14 @@ function closePopupEsc(evt) {
     });
   }
 }
+export const validate = {
+  formSelector: ".popup__form",
+  inputSelector: ".popup__profile-form-input",
+  submitButtonSelector: ".popup__save",
+  inactiveButtonClass: "popup__save_disabled",
+  inputErrorClass: "popup__profile-form-input_type_invalid",
+  errorClass: "popup__error_visible",
+};
 
 const formEditValidator = new FormValidator(profileForm,validate);
 formEditValidator.enableValidation();
